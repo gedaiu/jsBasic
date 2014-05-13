@@ -1,0 +1,100 @@
+/* Chrome, Safari, Opera */
+@-webkit-keyframes blink {
+	0%   {opacity: 1}
+	100% {opacity: 0}	
+}
+
+/* Standard syntax */
+@keyframes blink {
+	0%   {opacity: 1}
+	100% {opacity: 0}	
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+#sourcecode {
+	background-color: #eee;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.footer {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 10px;
+	background-color: rgba(255,255,255,0.7)
+}
+
+#inputSource {
+	width: calc(100% - 20px);
+	height: calc(100% - 20px);
+	background: transparent;
+	border: 0;
+	padding: 10px;
+	font-family: "Lucida Console", Monaco, monospace;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+#result {
+	background-color: #222;	
+	width: calc(50% - 20px);
+	height: calc(100% - 20px);	
+	color: #fff;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 10px;
+	overflow: auto;
+}
+
+
+.line.ready {
+	font-weight: bold;
+	color: #0c3;
+}
+
+.line {
+	font-family: "Lucida Console", Monaco, monospace;
+	font-size: 14px;
+	line-height: 20px;	
+}
+
+#result.focus .cursor {
+	display: inline-block;	
+}
+
+#result .line.input .value {
+	display: inline-block;	
+}
+
+.cursor {
+	display: none;	
+	background-color: #eee;	
+	width: 10px;
+	height: 18px;
+	vertical-align: text-bottom;
+	overflow: hidden;
+	
+	/* Chrome, Safari, Opera */
+	-webkit-animation-name: blink;
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-play-state: running;
+	
+	/* Standard syntax */
+	animation-name: blink;
+	animation-duration: 0.5s;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+}
+
